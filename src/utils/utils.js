@@ -1,13 +1,5 @@
 import { csv } from "d3-fetch"
 
-function germanize(val) {
-  let value = parseFloat(val)
-  if (!isNaN(value)) {
-    return value.toFixed(2).replace(".", ",")
-  }
-  return "unbekannt"
-}
-
 export function fetchData() {
   const DATA_URL = `https://apps.maxspuling.de/assets/bfq/data/BFQ_berlin_food_quartets%20-%20quartets.csv`
   return csv(DATA_URL)
@@ -27,6 +19,7 @@ export function makePlayingCards(data) {
       {
         name: "duration",
         value: parseInt(item.duration) || 0,
+        displayValue: `&sim;&thinsp;${item.duration}`,
         unit: "min",
         highestWins: true,
       },

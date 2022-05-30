@@ -4,7 +4,10 @@
 </script>
 
 <div class="address">
-  <div class="street">{streetAddress}, {district}</div>
+  <div class="street">
+    {#if streetAddress && streetAddress !== "..."}{streetAddress},
+    {/if}{district}
+  </div>
 </div>
 
 <style>

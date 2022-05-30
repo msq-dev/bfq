@@ -22,7 +22,7 @@
     </div>
     <div class="value">
       {#if info}<span class="info">{info}</span>{/if}
-      {displayValue || value}
+      {@html displayValue || value}
       {#if value && unit}<span class="unit">{unit}</span>{/if}
     </div>
   </div>
